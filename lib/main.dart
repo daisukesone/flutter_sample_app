@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/footer.dart';
 import 'package:my_app/header.dart';
 
 void main() {
@@ -15,8 +16,9 @@ class MyApp extends StatelessWidget {
         appBar: Header(),
         body: Center(child: Text("初めてのflutterアプリ")),
 
-      ),
+        bottomNavigationBar: Footer()
 
+    ),
     );
   }
 }
