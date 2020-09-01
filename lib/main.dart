@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/footer.dart';
+import 'package:my_app/root.dart';
 import 'package:my_app/header.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(App());
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false, //<-Debugの表示をoff
-      home: Scaffold(
-        appBar: Header(),
-        body: Center(child: Text("初めてのflutterアプリ")),
 
-        bottomNavigationBar: Footer()
-
+      return MaterialApp(
+      title: 'Flutter Demo',
+    debugShowCheckedModeBanner: false, //<-Debugの表示をoff
+      theme: ThemeData(
+      primaryColor: Colors.blueGrey[900],
     ),
+    home: RootWidget()
+
     );
   }
 }

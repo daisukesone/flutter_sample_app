@@ -1,13 +1,22 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Footer extends StatefulWidget{
-  const Footer();
+
+import 'routes/home_route.dart';
+import 'routes/talk_route.dart';
+import 'routes/timeline_route.dart';
+import 'routes/news_route.dart';
+import 'routes/wallet_route.dart';
+
+
+class RootWidget extends StatefulWidget{
+  RootWidget({Key key}): super(key: key);
 
   @override
-  _Footer createState() => _Footer();
+  _RootWidgetState createState() => _RootWidgetState();
 }
 
-class _Footer extends State<Footer>{
+class _RootWidgetState extends State<RootWidget>{
   int _selectedIndex = 0;
   final _bottomNavigationBarItems = <BottomNavigationBarItem>[];
 
@@ -29,6 +38,14 @@ static const _footerItemNames = [
   'ニュース',
   'ウォレット',
 ];
+
+  var _routes = [
+    Home(),
+    Talk(),
+    TimeLine(),
+    News(),
+    Wallet(),
+  ];
 
 @override
   void initState(){
@@ -81,12 +98,15 @@ BottomNavigationBarItem _UpdateActiveState(int index){
 }
   @override
   Widget build(BuildContext context){
-    return BottomNavigationBar(
+  return Scaffold(
+    body: _routes.elementAt(_selectedIndex),
+    bottomNavigationBar: BottomNavigationBar(
    type: BottomNavigationBarType.fixed,
    items: _bottomNavigationBarItems,
       currentIndex: _selectedIndex,
       onTap: _onItemTapped,
-          );
+          ),
+  );
 
   }
 }
