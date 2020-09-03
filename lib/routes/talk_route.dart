@@ -7,7 +7,30 @@ class Talk extends StatelessWidget{
       appBar: AppBar(
         title: Text("トーク"), //
       ),
-      body: Center(child: Text("トーク")
+      body: ListView(
+        padding: const EdgeInsets.all(8),
+        children: <Widget>[
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+          ListTile(title: Text("hoge")),
+        ],
       ),
     );
   }
